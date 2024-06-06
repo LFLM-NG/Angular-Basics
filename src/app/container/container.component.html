@@ -1,0 +1,27 @@
+<div class="ekart--products--container">
+<!-- //<img src="/assets/images/half_ton_throw.webp">
+//<img src={{product.pImage}}>
+<img [src]="product.pImage">
+<p>Name: {{ product.name }}</p>
+//<p>Price: ${{product.price}}</p>
+<p>Price: {{'$' + product.price}}</p>
+<p>Color: {{product.color}}</p>
+//<p>Discounted Price: ${{product.price - (product.price * product.discount / 100)}}</p>
+<p>Discounted Price: ${{getDiscountedPrice().toFixed(2)}}</p>
+<p>{{product.inStock > 0 ? 'Only ' + product.inStock + ' item left': 'Not in stock'}}</p>
+//<button [disabled]="!(product.inStock > 0)">Buy Now</button>
+<button [disabled]="(addToCart == 0)" (click)="decrementCartValue()">-</button>
+<span>{{ addToCart }}</span>
+<button [disabled]="(addToCart == product.inStock)" (click)="incrementCartValue()">+</button>
+//<input [value]="name" (input)="onNameChange($event)"><br>
+<p>name={{name}}</p> -->
+<!-- //<input bind-value="name" [attr.aria-hidden]=""> -->
+<!-- Bind attribute using attr. -->
+    <app-search (searchTextChange)="setSearchText($event)"></app-search>
+    <!-- <div *ngFor="let item of listOfString">
+        <p>Current element of array is: {{item}}</p>
+    </div> -->
+    <product-list [searchText]="searchText"></product-list>
+</div>
+
+<!-- String Interpolation does not work for the following HTML attributes: Disabled, Hidden, Checked; use Property Binding -->
